@@ -2,6 +2,15 @@ window.onload = () => {
     init();
 };
 
+if (port == null || port == "") {
+  port = 5000;
+  console.log(port + "simple");
+}
+
+//let port = 31163;
+//let port = 5000;
+//let port = 443;
+
 let peer = null;
 const configuration = {
     iceServers: [
@@ -9,7 +18,7 @@ const configuration = {
         { 'urls': 'stun:stun.l.google.com:19302' },
     ]
 };
-const WS_PORT = 5000;
+const WS_PORT = port;
 const username = document.querySelector('#username');
 const connectBtn = document.querySelector('#connect');
 const remoteContainer = document.querySelector('#remote_videos');

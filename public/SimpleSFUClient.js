@@ -1,5 +1,15 @@
 'use strict'
 
+
+if (port == null || port == "") {
+  port = 5000;
+  console.log(port + "simple");
+}
+
+//let port = 31163;
+//let port = 5000;
+//let port = 443;
+
 const _EVENTS = {
     onLeave: 'onLeave',
     onJoin: 'onJoin',
@@ -16,7 +26,7 @@ const _EVENTS = {
 class SimpleSFUClient {
     constructor(options) {
         const defaultSettings = {
-            port: 5000,
+            port: port,
             configuration: {
                 iceServers: [
                     { 'urls': 'stun:stun.stunprotocol.org:3478' },

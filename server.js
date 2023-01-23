@@ -10,15 +10,28 @@ const WebSocket = require('ws');
 const express = require('express');
 const app = express();
 
+
+app.set('view engine', 'ejs')
 app.use(express.static('public'));
 // based on examples at https://www.npmjs.com/package/ws 
 const WebSocketServer = WebSocket.Server;
 
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 5000;
+}
+
+//let port = 5000;
+
+app.get("/home", (req, res) => {
+    res.render("index", {port: port});
+})
+
 let serverOptions = {
-    listenPort: 5000,
-    useHttps: true,
-    httpsCertFile: '/path/to/cert/',
-    httpsKeyFile: '/path/to/key/',
+    listenPort: port,
+    //useHttps: true,
+    //httpsCertFile: '/path/to/cert/',
+    //httpsKeyFile: '/path/to/key/',
 };
 
 let sslOptions = {};
