@@ -55,7 +55,7 @@ class SimpleSFUClient {
     initWebSocket() {
         const protocol = window.location.protocol === 'https:' ? 'wss' : 'ws';
         //const url = `${protocol}://${window.location.hostname}:${this.settings.port}`;
-        const url = `${protocol}://${window.location.hostname}`;
+        const url = `${protocol}://${window.location.hostname}/home`;
 
         this.connection = new WebSocket(url);
         this.connection.onmessage = (data) => this.handleMessage(data);

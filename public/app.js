@@ -34,7 +34,7 @@ async function init() {
     console.log('window loaded');
     const protocol = window.location.protocol === 'https:' ? 'wss' : 'ws';
     //const url = `${protocol}://${window.location.hostname}:${WS_PORT}`;
-    const url = `${protocol}://${window.location.hostname}`;
+    const url = `${protocol}://${window.location.hostname}/home`;
     connection = new WebSocket(url);
     connection.onmessage = handleMessage;
     connection.onclose = handleClose;
