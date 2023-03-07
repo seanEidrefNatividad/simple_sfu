@@ -7,7 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <script>
-        var port = "<%= port %>";
+        var port = "<%= PORT %>";
         alert(port);
     </script>
     <link rel="shortcut icon" href="#">
@@ -20,7 +20,7 @@
         <div class="videos-inner"></div>
     </div>
     <script src="SimpleSFUClient.js"></script>
-    <script>
+    <script defer>
         const connectBtn = document.querySelector('#connect');
         const remoteContainer = document.querySelector('#remote_videos');
         const simple = new SimpleSFUClient();

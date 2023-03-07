@@ -24,14 +24,14 @@ if (port == null || port == "") {
 //let port = 5000;
 
 app.get("/home", (req, res) => {
-    res.render("index", {port: port});
+    res.render("index", {PORT: port});
 })
 
 let serverOptions = {
     listenPort: port,
-    //useHttps: true,
-    //httpsCertFile: '/path/to/cert/',
-    //httpsKeyFile: '/path/to/key/',
+    useHttps: true,
+    httpsCertFile: process.env.HTTPS_CERT_FULLCHAIN || `${__dirname}/certs/fullchain.pem`,
+    httpsKeyFile: process.env.HTTPS_CERT_PRIVKEY || `${__dirname}/certs/privkey.pem`,
 };
 
 let sslOptions = {};
