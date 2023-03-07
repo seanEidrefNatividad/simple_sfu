@@ -29,9 +29,9 @@ app.get("/home", (req, res) => {
 
 let serverOptions = {
     listenPort: port,
-    useHttps: true,
-    httpsCertFile: process.env.HTTPS_CERT_FULLCHAIN || `${__dirname}/certs/fullchain.pem`,
-    httpsKeyFile: process.env.HTTPS_CERT_PRIVKEY || `${__dirname}/certs/privkey.pem`,
+    // useHttps: true,
+    // httpsCertFile: `${__dirname}/certs/fullchain.pem`,
+    // httpsKeyFile: `${__dirname}/certs/privkey.pem`,
 };
 
 let sslOptions = {};
